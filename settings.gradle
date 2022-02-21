@@ -1,0 +1,8 @@
+rootProject.name = "My Application"
+include ':app'
+include ':MyViewModel2'
+include ':myroomlivedata'
+include ':mynavagation'
+include ':mynotificationpendingintent'
+include ':myworkmanagermodel'
+include ':mypaging'
