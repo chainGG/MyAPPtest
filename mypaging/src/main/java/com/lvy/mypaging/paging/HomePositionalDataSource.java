@@ -46,12 +46,11 @@ public class HomePositionalDataSource extends PositionalDataSource<MyDatas<MyDat
     //加载下一页
     @Override
     public void loadRange( PositionalDataSource.LoadRangeParams params,  PositionalDataSource.LoadRangeCallback<MyDatas<MyData>> callback) {
-        Log.e("loadRange","----------------loadRange");
-
+        Log.e("loadRange","----------------loadRange"+params.startPosition);
         //加载下一页
         RetrofitClient.getInstance()
                 .getAPI()
-                .getData(params.startPosition)
+                .getData((params.startPosition/10))
                 .enqueue(new Callback<MyDatas<MyData>>() {
                     @Override
                     public void onResponse(Call<MyDatas<MyData>> call, Response<MyDatas<MyData>> response) {
@@ -59,15 +58,10 @@ public class HomePositionalDataSource extends PositionalDataSource<MyDatas<MyDat
                             callback.onResult(response.body().data.mData);
                             Log.e("loadRange","----------------loadRange"+response.body().data.mData);
                         }
-
                     }
-
                     @Override
                     public void onFailure(Call<MyDatas<MyData>> call, Throwable t) {
                     }
                 });
-
-
-
     }
 }

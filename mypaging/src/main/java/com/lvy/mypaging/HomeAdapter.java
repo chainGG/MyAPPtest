@@ -54,8 +54,10 @@ public class HomeAdapter  extends PagedListAdapter<MyDatasArr,HomeAdapter.HomeVi
 
     @Override
     public void onBindViewHolder(HomeAdapter.HomeViewHolder holder, int position) {
-//        MyDatasArr arr=
-        Log.e("TAG","----------"+getItem(position));
+
+
+
+        Log.e("TAG","----------"+ (getItem(position).toString()));
 //        holder.tv_post_excerpt .setText(arr.post_excerpt);
 //        holder.tvRecOneContent .setText(arr.post_title);
 

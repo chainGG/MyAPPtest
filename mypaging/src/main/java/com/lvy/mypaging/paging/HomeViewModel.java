@@ -22,7 +22,7 @@ public class HomeViewModel extends ViewModel {
                 //设置当距离底部还有多少条数据的时候加载下一页
                 .setPrefetchDistance(2)
                 //设置初始加载的数量
-                .setInitialLoadSizeHint(HomePositionalDataSource.PER_PAGE*2)
+                .setInitialLoadSizeHint(HomePositionalDataSource.PER_PAGE*1)
                 //最大加载数量
                 .setMaxSize(65536*HomePositionalDataSource.PER_PAGE)
                 .build();
